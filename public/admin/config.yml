@@ -1,0 +1,84 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/content/home.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", default: "Browse everything." }
+
+          - label: "Benefits Section"
+            name: "benefits"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string", default: "Benefits" }
+              - { label: "Headline", name: "headline", widget: "string", default: "We've cracked the code." }
+              - { label: "Subheadline", name: "subheadline", widget: "string", default: "Area provides real insights, without the data overload." }
+              - label: "Benefits List"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Icon", name: "icon", widget: "select", options: ["cable", "earth", "account", "chart"] }
+
+          - label: "Features Section"
+            name: "features"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string", default: "See the Big Picture" }
+              - { label: "Subheadline", name: "subheadline", widget: "text" }
+              - label: "Feature List"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+
+          - label: "Specifications Section"
+            name: "specifications"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "label", widget: "string", default: "Specs" }
+              - { label: "Headline", name: "headline", widget: "string", default: "Why Choose Area?" }
+              - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Testimonial"
+            name: "testimonial"
+            widget: "object"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Author Name", name: "authorName", widget: "string" }
+              - { label: "Author Title", name: "authorTitle", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+
+          - label: "How It Works"
+            name: "howItWorks"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string", default: "Map Your Success" }
+              - label: "Steps"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+
+          - label: "CTA Section"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string", default: "Connect with us" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string", default: "Learn More" }

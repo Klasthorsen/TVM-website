@@ -1,0 +1,172 @@
+---
+const areaFeatures = [
+  { text: "Ultra-fast browsing", included: true },
+  { text: "Advanced AI insights", included: true },
+  { text: "Seamless integration", included: true },
+  { text: "Advanced AI insights", included: true },
+  { text: "Ultra-fast browsing", included: true },
+  { text: "Full UTF-8 support", included: true },
+];
+
+const webSurgeFeatures = [
+  { text: "Fast browsing", included: true },
+  { text: "Basic AI recommendations", included: true },
+  { text: "Restricts customization", included: true },
+  { text: "Basic AI insights", included: false },
+  { text: "Fast browsing", included: true },
+  { text: "Potential display errors", included: false },
+];
+
+const hyperViewFeatures = [
+  { text: "Moderate speeds", included: false },
+  { text: "No AI assistance", included: false },
+  { text: "Steep learning curve", included: false },
+  { text: "No AI assistance", included: false },
+  { text: "Moderate speeds", included: false },
+  { text: "Partial UTF-8 support", included: false },
+];
+---
+
+<section id="specifications" class="w-full max-w-[1500px] mx-auto px-10 pb-32">
+  <div class="border-t border-light-grey py-20 px-4 md:px-60 text-center">
+    <span class="font-mono text-xs text-accent tracking-[-0.12px] uppercase"
+      >Specs</span
+    >
+    <h2
+      class="font-display text-[36px] md:text-[60px] leading-[0.9] tracking-[-1.8px] mt-14"
+    >
+      Why Choose Area?
+    </h2>
+    <p
+      class="font-body text-[15px] text-dark-grey tracking-[-0.075px] mt-12 max-w-[720px] mx-auto"
+    >
+      You need a solution that keeps up. That's why we developed Area. A
+      developer-friendly approach to streamline your business.
+    </p>
+    <a
+      href="#contact"
+      class="inline-block bg-accent-light font-body font-bold text-sm tracking-[-0.35px] px-[22px] py-[14px] rounded-full hover:bg-accent-light/80 transition-colors mt-8"
+    >
+      Discover More
+    </a>
+  </div>
+
+  <div class="flex flex-col md:flex-row overflow-x-auto rounded-[20px]">
+    <!-- Area Column -->
+    <div
+      class="flex-1 min-w-[200px] bg-white border border-divider rounded-[20px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.08)]"
+    >
+      <div
+        class="h-24 flex items-center justify-center border-b border-light-grey"
+      >
+        <span class="font-body font-medium text-[26px] tracking-[-2px]"
+          >Area</span
+        >
+      </div>
+      {
+        areaFeatures.map((feature) => (
+          <div class="flex items-center gap-2 px-8 py-8 border-b border-divider">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              class="text-black shrink-0"
+            >
+              <path
+                d="M2 7L5.5 10.5L12 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+            <span class="font-mono text-xs tracking-[-0.12px]">
+              {feature.text}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- WebSurge Column -->
+    <div class="flex-1 min-w-[200px]">
+      <div
+        class="h-24 flex items-center justify-center border-b border-light-grey"
+      >
+        <span class="font-body font-medium text-[23px] text-dark-grey tracking-[-1.8px]"
+          >WebSurge</span
+        >
+      </div>
+      {
+        webSurgeFeatures.map((feature) => (
+          <div class="flex items-center gap-2 px-8 py-8 border-b border-divider">
+            {feature.included ? (
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                class="text-black shrink-0"
+              >
+                <path
+                  d="M2 7L5.5 10.5L12 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                class="text-dark-grey shrink-0"
+              >
+                <path
+                  d="M3 3L11 11M11 3L3 11"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            )}
+            <span class="font-mono text-xs tracking-[-0.12px]">
+              {feature.text}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- HyperView Column -->
+    <div class="flex-1 min-w-[200px]">
+      <div
+        class="h-24 flex items-center justify-center border-b border-light-grey"
+      >
+        <span class="font-mono font-medium text-[22px] text-dark-grey tracking-[-1.7px]"
+          >HyperView</span
+        >
+      </div>
+      {
+        hyperViewFeatures.map((feature) => (
+          <div class="flex items-center gap-2 px-8 py-8 border-b border-divider border-l border-l-divider">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              class="text-dark-grey shrink-0"
+            >
+              <path
+                d="M3 3L11 11M11 3L3 11"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+            <span class="font-mono text-xs tracking-[-0.12px]">
+              {feature.text}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
