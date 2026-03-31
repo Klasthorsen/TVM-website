@@ -2,8 +2,9 @@ backend:
   name: github
   repo: Klasthorsen/TVM-website
   branch: main
-  base_url: https://decap-oauth.vercel.app
-  auth_endpoint: /api/auth
+  auth_type: pkce
+  app_id: Iv23liqeFBQG8zr1w6gs
+  cms_label_prefix: decap-cms/
 
 media_folder: public/images
 public_folder: /images
