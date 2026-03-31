@@ -3,10 +3,26 @@
   "siteDescription": "Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region.",
   "logo": "/images/logo.svg",
   "navigation": [
-    { "label": "Benefits", "href": "#benefits" },
-    { "label": "Specifications", "href": "#specifications" },
-    { "label": "How-to", "href": "#how-to" },
-    { "label": "Contact Us", "href": "#contact" }
+    {
+      "label": "Benefits",
+      "href": "#benefits"
+    },
+    {
+      "label": "Specifications",
+      "href": "#specifications"
+    },
+    {
+      "label": "How-to",
+      "href": "#how-to"
+    },
+    {
+      "label": "Contact Us",
+      "href": "#contact"
+    },
+    {
+      "label": "Ny navigigation",
+      "href": "https://buddyenergy.se/live"
+    }
   ],
   "footer": {
     "copyright": "© Area.",
