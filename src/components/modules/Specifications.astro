@@ -1,0 +1,51 @@
+---
+interface Props {
+  label: string;
+  headline: string;
+  description: string;
+  columns: Array<{
+    name: string;
+    highlighted: boolean;
+    features: Array<{ text: string; included: boolean }>;
+  }>;
+}
+
+const { label, headline, description, columns } = Astro.props;
+---
+
+<section id="specifications" class="w-full max-w-[1500px] mx-auto px-10 pb-32">
+  <div class="border-t border-light-grey py-20 px-4 md:px-60 text-center">
+    <span class="font-mono text-xs text-accent tracking-[-0.12px] uppercase">{label}</span>
+    <h2 class="font-display text-[36px] md:text-[60px] leading-[0.9] tracking-[-1.8px] mt-14">{headline}</h2>
+    <p class="font-body text-[15px] text-dark-grey tracking-[-0.075px] mt-12 max-w-[720px] mx-auto">{description}</p>
+    <a href="#contact" class="inline-block bg-accent-light font-body font-bold text-sm tracking-[-0.35px] px-[22px] py-[14px] rounded-full hover:bg-accent-light/80 transition-colors mt-8">
+      Discover More
+    </a>
+  </div>
+
+  <div class="flex flex-col md:flex-row overflow-x-auto rounded-[20px]">
+    {columns.map((column, colIndex) => (
+      <div class={`flex-1 min-w-[200px] ${column.highlighted ? 'bg-white border border-divider rounded-[20px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.08)]' : ''}`}>
+        <div class="h-24 flex items-center justify-center border-b border-light-grey">
+          <span class={`font-body font-medium tracking-[-2px] ${column.highlighted ? 'text-[26px] text-black' : 'text-[23px] text-dark-grey'}`}>
+            {column.name}
+          </span>
+        </div>
+        {column.features.map((feature) => (
+          <div class={`flex items-center gap-2 px-8 py-8 border-b border-divider ${colIndex > 0 ? 'border-l border-l-divider' : ''}`}>
+            {feature.included ? (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="text-black shrink-0">
+                <path d="M2 7L5.5 10.5L12 4" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class="text-dark-grey shrink-0">
+                <path d="M3 3L11 11M11 3L3 11" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            )}
+            <span class="font-mono text-xs tracking-[-0.12px]">{feature.text}</span>
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+</section>

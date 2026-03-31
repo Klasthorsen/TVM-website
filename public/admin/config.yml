@@ -13,101 +13,169 @@ site_url: https://tvm-website-topaz.vercel.app
 display_url: https://tvm-website-topaz.vercel.app
 
 collections:
+  # Site Settings
+  - name: "settings"
+    label: "⚙️ Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "src/content/settings.json"
+        fields:
+          - { label: "Site Name", name: "siteName", widget: "string", default: "Area" }
+          - { label: "Site Description", name: "siteDescription", widget: "text" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - label: "Navigation"
+            name: "navigation"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Copyright Text", name: "copyright", widget: "string", default: "© Area." }
+              - { label: "Year", name: "year", widget: "string", default: "2025" }
+
+  # Pages with modular blocks
   - name: "pages"
-    label: "Pages"
+    label: "📄 Pages"
     files:
       - name: "home"
         label: "Home Page"
         file: "src/content/home.json"
         fields:
-          - label: "Hero Section"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string", default: "Browse everything." }
-              - { label: "Hero Image", name: "heroImage", widget: "image", required: true }
-
-          - label: "Logo Cloud"
-            name: "logoCloud"
-            widget: "object"
-            fields:
-              - { label: "Label", name: "label", widget: "string", default: "Trusted by:" }
-              - label: "Logos"
-                name: "logos"
-                widget: "list"
+          - label: "Page Modules"
+            name: "modules"
+            widget: "list"
+            label_singular: "Module"
+            types:
+              # Hero Module
+              - label: "🎯 Hero"
+                name: "hero"
+                widget: "object"
                 fields:
-                  - { label: "Logo Image", name: "image", widget: "image" }
+                  - { label: "Title", name: "title", widget: "string", default: "Browse everything." }
+                  - { label: "Background Image", name: "heroImage", widget: "image" }
+
+              # Logo Cloud Module
+              - label: "🏢 Logo Cloud"
+                name: "logoCloud"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string", default: "Trusted by:" }
+                  - label: "Logos"
+                    name: "logos"
+                    widget: "list"
+                    fields:
+                      - { label: "Logo Image", name: "image", widget: "image" }
+                      - { label: "Alt Text", name: "alt", widget: "string" }
+
+              # Benefits Module
+              - label: "✨ Benefits"
+                name: "benefits"
+                widget: "object"
+                fields:
+                  - { label: "Section Label", name: "label", widget: "string", default: "Benefits" }
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - { label: "Subheadline", name: "subheadline", widget: "string" }
+                  - { label: "Section Image", name: "image", widget: "image" }
+                  - label: "Benefits List"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "text" }
+                      - { label: "Icon", name: "icon", widget: "select", options: ["cable", "earth", "account", "chart"] }
+
+              # Features Module
+              - label: "📊 Features"
+                name: "features"
+                widget: "object"
+                fields:
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - { label: "Subheadline", name: "subheadline", widget: "text" }
+                  - { label: "Feature Image", name: "image", widget: "image" }
+                  - label: "Feature List"
+                    name: "items"
+                    widget: "list"
+                    fields:
+                      - { label: "Text", name: "text", widget: "string" }
+
+              # Specifications Table Module
+              - label: "📋 Specifications Table"
+                name: "specifications"
+                widget: "object"
+                fields:
+                  - { label: "Section Label", name: "label", widget: "string", default: "Specs" }
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - label: "Columns"
+                    name: "columns"
+                    widget: "list"
+                    fields:
+                      - { label: "Company Name", name: "name", widget: "string" }
+                      - { label: "Highlighted", name: "highlighted", widget: "boolean", default: false }
+                      - label: "Features"
+                        name: "features"
+                        widget: "list"
+                        fields:
+                          - { label: "Text", name: "text", widget: "string" }
+                          - { label: "Included", name: "included", widget: "boolean", default: true }
+
+              # Testimonial Module
+              - label: "💬 Testimonial"
+                name: "testimonial"
+                widget: "object"
+                fields:
+                  - { label: "Quote", name: "quote", widget: "text" }
+                  - { label: "Author Name", name: "authorName", widget: "string" }
+                  - { label: "Author Title", name: "authorTitle", widget: "string" }
+                  - { label: "Image", name: "image", widget: "image" }
+
+              # How It Works Module
+              - label: "🔧 How It Works"
+                name: "howItWorks"
+                widget: "object"
+                fields:
+                  - { label: "Headline", name: "headline", widget: "string" }
+                  - label: "Steps"
+                    name: "steps"
+                    widget: "list"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "text" }
+
+              # Full Width Image Module
+              - label: "🖼️ Full Width Image"
+                name: "fullWidthImage"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
                   - { label: "Alt Text", name: "alt", widget: "string" }
 
-          - label: "Benefits Section"
-            name: "benefits"
-            widget: "object"
-            fields:
-              - { label: "Section Label", name: "label", widget: "string", default: "Benefits" }
-              - { label: "Headline", name: "headline", widget: "string", default: "We've cracked the code." }
-              - { label: "Subheadline", name: "subheadline", widget: "string" }
-              - { label: "Section Image", name: "image", widget: "image" }
-              - label: "Benefits List"
-                name: "items"
-                widget: "list"
+              # CTA Module
+              - label: "📣 Call to Action"
+                name: "cta"
+                widget: "object"
                 fields:
-                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Headline", name: "headline", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
-                  - { label: "Icon", name: "icon", widget: "select", options: ["cable", "earth", "account", "chart"] }
+                  - { label: "Button Text", name: "buttonText", widget: "string" }
+                  - { label: "Button Link", name: "buttonLink", widget: "string", default: "#" }
 
-          - label: "Features Section"
-            name: "features"
-            widget: "object"
-            fields:
-              - { label: "Headline", name: "headline", widget: "string", default: "See the Big Picture" }
-              - { label: "Subheadline", name: "subheadline", widget: "text" }
-              - { label: "Feature Image", name: "image", widget: "image" }
-              - label: "Feature List"
-                name: "items"
-                widget: "list"
+              # Text Block Module
+              - label: "📝 Text Block"
+                name: "textBlock"
+                widget: "object"
                 fields:
-                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Headline", name: "headline", widget: "string", required: false }
+                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Centered", name: "centered", widget: "boolean", default: false }
 
-          - label: "Specifications Section"
-            name: "specifications"
-            widget: "object"
-            fields:
-              - { label: "Section Label", name: "label", widget: "string", default: "Specs" }
-              - { label: "Headline", name: "headline", widget: "string", default: "Why Choose Area?" }
-              - { label: "Description", name: "description", widget: "text" }
-
-          - label: "Testimonial"
-            name: "testimonial"
-            widget: "object"
-            fields:
-              - { label: "Quote", name: "quote", widget: "text" }
-              - { label: "Author Name", name: "authorName", widget: "string" }
-              - { label: "Author Title", name: "authorTitle", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-
-          - label: "How It Works"
-            name: "howItWorks"
-            widget: "object"
-            fields:
-              - { label: "Headline", name: "headline", widget: "string", default: "Map Your Success" }
-              - label: "Steps"
-                name: "steps"
-                widget: "list"
+              # Spacer Module
+              - label: "↕️ Spacer"
+                name: "spacer"
+                widget: "object"
                 fields:
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-
-          - label: "Hero Image Section"
-            name: "heroImageSection"
-            widget: "object"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Alt Text", name: "alt", widget: "string" }
-
-          - label: "CTA Section"
-            name: "cta"
-            widget: "object"
-            fields:
-              - { label: "Headline", name: "headline", widget: "string", default: "Connect with us" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Button Text", name: "buttonText", widget: "string", default: "Learn More" }
+                  - { label: "Size", name: "size", widget: "select", options: ["small", "medium", "large"], default: "medium" }

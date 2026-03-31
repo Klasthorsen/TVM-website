@@ -1,36 +1,28 @@
 ---
 interface Props {
-  data: {
-    quote: string;
-    authorName: string;
-    authorTitle: string;
-    image: string;
-  };
+  quote: string;
+  authorName: string;
+  authorTitle: string;
+  image: string;
 }
 
-const { data } = Astro.props;
+const { quote, authorName, authorTitle, image } = Astro.props;
 ---
 
 <section class="w-full max-w-[1500px] mx-auto px-10 pb-32">
   <div class="flex flex-col md:flex-row gap-5 h-auto md:h-[670px]">
     <div class="flex-1 rounded-[30px] overflow-hidden">
-      <img
-        src={data.image}
-        alt="Testimonial"
-        class="w-full h-[300px] md:h-full object-cover"
-      />
+      <img src={image} alt="Testimonial" class="w-full h-[300px] md:h-full object-cover" />
     </div>
 
     <div class="flex-1 border-t border-divider flex flex-col justify-center pl-0 md:pl-12 py-10">
       <blockquote class="font-display text-[24px] md:text-[40px] leading-none tracking-[-1.6px]">
-        "{data.quote}"
+        "{quote}"
       </blockquote>
 
       <div class="mt-12">
-        <p class="font-body text-[15px] tracking-[-0.075px]">{data.authorName}</p>
-        <p class="font-mono text-xs text-accent tracking-[-0.12px] mt-2">
-          {data.authorTitle}
-        </p>
+        <p class="font-body text-[15px] tracking-[-0.075px]">{authorName}</p>
+        <p class="font-mono text-xs text-accent tracking-[-0.12px] mt-2">{authorTitle}</p>
       </div>
     </div>
   </div>

@@ -1,33 +1,52 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import Header from "../components/Header.astro";
-import LogoCloud from "../components/LogoCloud.astro";
-import Benefits from "../components/Benefits.astro";
-import FeaturesCarousel from "../components/FeaturesCarousel.astro";
-import SpecificationsTable from "../components/SpecificationsTable.astro";
-import Testimonial from "../components/Testimonial.astro";
-import HowItWorks from "../components/HowItWorks.astro";
-import HeroImage from "../components/HeroImage.astro";
-import CTA from "../components/CTA.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
+// Import all modules
+import Hero from "../components/modules/Hero.astro";
+import LogoCloud from "../components/modules/LogoCloud.astro";
+import Benefits from "../components/modules/Benefits.astro";
+import Features from "../components/modules/Features.astro";
+import Specifications from "../components/modules/Specifications.astro";
+import Testimonial from "../components/modules/Testimonial.astro";
+import HowItWorks from "../components/modules/HowItWorks.astro";
+import FullWidthImage from "../components/modules/FullWidthImage.astro";
+import CTA from "../components/modules/CTA.astro";
+import TextBlock from "../components/modules/TextBlock.astro";
+import Spacer from "../components/modules/Spacer.astro";
+
 import content from "../content/home.json";
+import settings from "../content/settings.json";
+
+const moduleComponents: Record<string, any> = {
+  hero: Hero,
+  logoCloud: LogoCloud,
+  benefits: Benefits,
+  features: Features,
+  specifications: Specifications,
+  testimonial: Testimonial,
+  howItWorks: HowItWorks,
+  fullWidthImage: FullWidthImage,
+  cta: CTA,
+  textBlock: TextBlock,
+  spacer: Spacer,
+};
 ---
 
-<Layout title="Area - Browse Everything">
+<Layout title={`${settings.siteName} - Browse Everything`}>
   <div class="min-h-screen">
-    <Navigation />
-    <Header data={content.hero} />
-    <LogoCloud data={content.logoCloud} />
-    <Benefits data={content.benefits} />
-    <FeaturesCarousel data={content.features} />
-    <SpecificationsTable data={content.specifications} />
-    <Testimonial data={content.testimonial} />
-    <HowItWorks data={content.howItWorks} />
-    <HeroImage data={content.heroImageSection} />
-    <CTA data={content.cta} />
-    <Footer />
+    <Navigation settings={settings} />
+    
+    {content.modules.map((module: any) => {
+      const Component = moduleComponents[module.type];
+      if (!Component) return null;
+      
+      const { type, ...props } = module;
+      return <Component {...props} />;
+    })}
+    
+    <Footer settings={settings} />
   </div>
 </Layout>

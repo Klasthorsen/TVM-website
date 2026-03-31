@@ -1,0 +1,21 @@
+---
+interface Props {
+  label: string;
+  logos: Array<{ image: string; alt: string }>;
+}
+
+const { label, logos } = Astro.props;
+---
+
+<section class="w-full max-w-[1500px] mx-auto px-10 py-12">
+  <p class="font-body text-[15px] text-dark-grey tracking-[-0.075px] mb-8">
+    {label}
+  </p>
+  <div class="flex flex-wrap justify-center gap-5 md:gap-10">
+    {logos.map((logo) => (
+      <div class="w-[114px] h-[44px] opacity-60 mix-blend-exclusion">
+        <img src={logo.image} alt={logo.alt} class="w-full h-full object-contain" />
+      </div>
+    ))}
+  </div>
+</section>
