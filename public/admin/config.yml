@@ -9,6 +9,9 @@ backend:
 media_folder: public/images
 public_folder: /images
 
+site_url: https://tvm-website-topaz.vercel.app
+display_url: https://tvm-website-topaz.vercel.app
+
 collections:
   - name: "pages"
     label: "Pages"
@@ -17,11 +20,24 @@ collections:
         label: "Home Page"
         file: "src/content/home.json"
         fields:
-          - label: "Hero"
+          - label: "Hero Section"
             name: "hero"
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string", default: "Browse everything." }
+              - { label: "Hero Image", name: "heroImage", widget: "image", required: true }
+
+          - label: "Logo Cloud"
+            name: "logoCloud"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string", default: "Trusted by:" }
+              - label: "Logos"
+                name: "logos"
+                widget: "list"
+                fields:
+                  - { label: "Logo Image", name: "image", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string" }
 
           - label: "Benefits Section"
             name: "benefits"
@@ -29,7 +45,8 @@ collections:
             fields:
               - { label: "Section Label", name: "label", widget: "string", default: "Benefits" }
               - { label: "Headline", name: "headline", widget: "string", default: "We've cracked the code." }
-              - { label: "Subheadline", name: "subheadline", widget: "string", default: "Area provides real insights, without the data overload." }
+              - { label: "Subheadline", name: "subheadline", widget: "string" }
+              - { label: "Section Image", name: "image", widget: "image" }
               - label: "Benefits List"
                 name: "items"
                 widget: "list"
@@ -44,6 +61,7 @@ collections:
             fields:
               - { label: "Headline", name: "headline", widget: "string", default: "See the Big Picture" }
               - { label: "Subheadline", name: "subheadline", widget: "text" }
+              - { label: "Feature Image", name: "image", widget: "image" }
               - label: "Feature List"
                 name: "items"
                 widget: "list"
@@ -65,7 +83,7 @@ collections:
               - { label: "Quote", name: "quote", widget: "text" }
               - { label: "Author Name", name: "authorName", widget: "string" }
               - { label: "Author Title", name: "authorTitle", widget: "string" }
-              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Image", name: "image", widget: "image" }
 
           - label: "How It Works"
             name: "howItWorks"
@@ -78,6 +96,13 @@ collections:
                 fields:
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Hero Image Section"
+            name: "heroImageSection"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
 
           - label: "CTA Section"
             name: "cta"

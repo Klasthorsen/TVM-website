@@ -1,12 +1,19 @@
 ---
-const heroImage = "https://www.figma.com/api/mcp/asset/0ca256b0-d4b8-4165-acef-ceca696e6edf";
+interface Props {
+  data: {
+    title: string;
+    heroImage: string;
+  };
+}
+
+const { data } = Astro.props;
 ---
 
 <header class="w-full max-w-[1500px] mx-auto px-10">
   <h1
     class="font-display text-[60px] md:text-[100px] lg:text-[160px] leading-[0.9] tracking-[-3px] md:tracking-[-6.8px] text-center"
   >
-    Browse everything.
+    {data.title}
   </h1>
 
   <div class="mt-16 md:mt-60 relative">
@@ -18,8 +25,8 @@ const heroImage = "https://www.figma.com/api/mcp/asset/0ca256b0-d4b8-4165-acef-c
       >
         <div class="absolute inset-4 rounded-[16px] overflow-hidden">
           <img
-            src={heroImage}
-            alt="Data visualization showing 78% increase across 33 regions"
+            src={data.heroImage}
+            alt="Data visualization"
             class="w-full h-full object-cover"
           />
         </div>

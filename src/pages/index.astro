@@ -12,20 +12,22 @@ import HeroImage from "../components/HeroImage.astro";
 import CTA from "../components/CTA.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+
+import content from "../content/home.json";
 ---
 
 <Layout title="Area - Browse Everything">
   <div class="min-h-screen">
     <Navigation />
-    <Header />
-    <LogoCloud />
-    <Benefits />
-    <FeaturesCarousel />
-    <SpecificationsTable />
-    <Testimonial />
-    <HowItWorks />
-    <HeroImage />
-    <CTA />
+    <Header data={content.hero} />
+    <LogoCloud data={content.logoCloud} />
+    <Benefits data={content.benefits} />
+    <FeaturesCarousel data={content.features} />
+    <SpecificationsTable data={content.specifications} />
+    <Testimonial data={content.testimonial} />
+    <HowItWorks data={content.howItWorks} />
+    <HeroImage data={content.heroImageSection} />
+    <CTA data={content.cta} />
     <Footer />
   </div>
 </Layout>

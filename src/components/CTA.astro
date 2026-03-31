@@ -1,38 +1,30 @@
 ---
+interface Props {
+  data: {
+    headline: string;
+    description: string;
+    buttonText: string;
+  };
+}
 
+const { data } = Astro.props;
 ---
 
 <section id="contact" class="w-full max-w-[1500px] mx-auto px-10 py-32">
-  <div
-    class="border-t border-divider pt-32 pb-32 px-4 md:px-[300px] text-center"
-  >
-    <h2
-      class="font-display text-[36px] md:text-[60px] leading-[0.9] tracking-[-1.8px]"
-    >
-      Connect with us
+  <div class="border-t border-divider pt-32 pb-32 px-4 md:px-[300px] text-center">
+    <h2 class="font-display text-[36px] md:text-[60px] leading-[0.9] tracking-[-1.8px]">
+      {data.headline}
     </h2>
-    <p
-      class="font-body text-[15px] text-dark-grey tracking-[-0.075px] mt-10 max-w-[600px] mx-auto"
-    >
-      Schedule a quick call to learn how Area can turn your regional data into a
-      powerful advantage.
+    <p class="font-body text-[15px] text-dark-grey tracking-[-0.075px] mt-10 max-w-[600px] mx-auto">
+      {data.description}
     </p>
     <a
       href="#"
       class="inline-flex items-center justify-center gap-0.5 w-full max-w-[600px] bg-accent text-white font-body font-bold text-sm tracking-[-0.35px] px-[22px] py-[14px] rounded-full hover:bg-accent/90 transition-colors mt-10"
     >
-      Learn More
-      <svg
-        width="7"
-        height="7"
-        viewBox="0 0 7 7"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M1.5 5.5L5.5 1.5M5.5 1.5H2M5.5 1.5V5"
-          stroke="currentColor"
-          stroke-width="1.2"></path>
+      {data.buttonText}
+      <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 5.5L5.5 1.5M5.5 1.5H2M5.5 1.5V5" stroke="currentColor" stroke-width="1.2" />
       </svg>
     </a>
   </div>

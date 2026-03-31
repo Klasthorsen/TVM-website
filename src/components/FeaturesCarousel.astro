@@ -1,21 +1,14 @@
 ---
-const features = [
-  { num: "01", text: "Spot Trends in Seconds: No more digging through numbers." },
-  {
-    num: "02",
-    text: "Get Everyone on the Same Page: Share easy-to-understand reports with your team.",
-  },
-  {
-    num: "03",
-    text: "Make Presentations Pop: Interactive maps and dashboards keep your audience engaged.",
-  },
-  {
-    num: "04",
-    text: "Your Global Snapshot: Get a quick, clear overview of your entire operation.",
-  },
-];
+interface Props {
+  data: {
+    headline: string;
+    subheadline: string;
+    image: string;
+    items: Array<{ text: string }>;
+  };
+}
 
-const featureImage = "https://www.figma.com/api/mcp/asset/a4abd79a-ead6-46b9-be31-fb6d5d22dc3d";
+const { data } = Astro.props;
 ---
 
 <section class="w-full max-w-[1500px] mx-auto px-10 pb-32">
@@ -23,20 +16,19 @@ const featureImage = "https://www.figma.com/api/mcp/asset/a4abd79a-ead6-46b9-be3
     <div class="flex-1 border-t border-divider pt-16 pb-20">
       <div class="max-w-[510px]">
         <h2 class="font-display text-[36px] md:text-[60px] leading-[0.9] tracking-[-1.8px]">
-          See the Big Picture
+          {data.headline}
         </h2>
         <p class="font-body text-[15px] text-dark-grey tracking-[-0.075px] mt-10">
-          Area turns your data into clear, vibrant visuals that show you exactly
-          what's happening in each region.
+          {data.subheadline}
         </p>
       </div>
 
       <div class="mt-10">
         {
-          features.map((feature) => (
+          data.items.map((feature, index) => (
             <article class="border-t border-divider flex gap-8 py-5 pr-20">
               <span class="font-body font-bold text-[15px] text-dark-grey tracking-[-0.075px]">
-                {feature.num}
+                {String(index + 1).padStart(2, "0")}
               </span>
               <p class="font-body text-[15px] tracking-[-0.075px]">
                 {feature.text}
@@ -57,8 +49,8 @@ const featureImage = "https://www.figma.com/api/mcp/asset/a4abd79a-ead6-46b9-be3
     <div class="flex-1">
       <div class="h-[400px] lg:h-[711px] rounded-[30px] overflow-hidden relative">
         <img
-          src={featureImage}
-          alt="Three white cylindrical columns"
+          src={data.image}
+          alt="Feature visualization"
           class="w-full h-full object-cover"
         />
         <div class="absolute inset-0 bg-black/5 rounded-[30px]"></div>

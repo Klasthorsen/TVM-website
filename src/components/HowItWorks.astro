@@ -1,28 +1,22 @@
 ---
-const steps = [
-  {
-    num: "01",
-    title: "Get Started",
-    description: "With our intuitive setup, you're up and running in minutes.",
-  },
-  {
-    num: "02",
-    title: "Customize and Configure",
-    description: "Adapt Area to your specific requirements and preferences.",
-  },
-  {
-    num: "03",
-    title: "Grow Your Business",
-    description: "Make informed decisions to exceed your goals.",
-  },
-];
+interface Props {
+  data: {
+    headline: string;
+    steps: Array<{
+      title: string;
+      description: string;
+    }>;
+  };
+}
+
+const { data } = Astro.props;
 ---
 
 <section id="how-to" class="w-full max-w-[1500px] mx-auto px-10 pb-32">
   <div class="border-t border-divider pt-20">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-20">
       <h2 class="font-display text-[36px] md:text-[60px] leading-[0.9] tracking-[-1.8px]">
-        Map Your Success
+        {data.headline}
       </h2>
       <a
         href="#contact"
@@ -34,10 +28,10 @@ const steps = [
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       {
-        steps.map((step) => (
+        data.steps.map((step, index) => (
           <article class="border-t border-divider pt-16 pb-5 pr-8">
             <span class="font-body text-[60px] md:text-[80px] leading-none tracking-[-3.2px] text-light-grey">
-              {step.num}
+              {String(index + 1).padStart(2, "0")}
             </span>
             <div class="mt-16">
               <h3 class="font-display text-lg tracking-[-0.54px]">

@@ -1,12 +1,19 @@
 ---
-const heroImage = "https://www.figma.com/api/mcp/asset/763c2e20-e1d4-46bc-a304-5692ed6f7f6e";
+interface Props {
+  data: {
+    image: string;
+    alt: string;
+  };
+}
+
+const { data } = Astro.props;
 ---
 
 <section class="w-full max-w-[1500px] mx-auto px-10 pb-10">
   <div class="aspect-[1120/620] max-h-[830px] rounded-[30px] overflow-hidden">
     <img
-      src={heroImage}
-      alt="A winding path going up a mountain"
+      src={data.image}
+      alt={data.alt}
       class="w-full h-full object-cover"
     />
   </div>
