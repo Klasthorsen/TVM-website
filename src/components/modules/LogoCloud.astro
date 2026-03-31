@@ -1,10 +1,10 @@
 ---
 interface Props {
-  label: string;
-  logos: Array<{ image: string; alt: string }>;
+  label?: string;
+  logos?: Array<{ image: string; alt: string }>;
 }
 
-const { label, logos } = Astro.props;
+const { label = "Trusted by:", logos = [] } = Astro.props;
 ---
 
 <section class="w-full max-w-[1500px] mx-auto px-10 py-12">

@@ -1,4 +1,10 @@
 {
+  "seo": {
+    "title": "",
+    "description": "",
+    "ogImage": "",
+    "noIndex": false
+  },
   "modules": [
     {
       "type": "logoCloud",

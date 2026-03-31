@@ -1,16 +1,16 @@
 ---
 interface Props {
-  label: string;
-  headline: string;
-  description: string;
-  columns: Array<{
+  label?: string;
+  headline?: string;
+  description?: string;
+  columns?: Array<{
     name: string;
     highlighted: boolean;
     features: Array<{ text: string; included: boolean }>;
   }>;
 }
 
-const { label, headline, description, columns } = Astro.props;
+const { label = "Specs", headline = "", description = "", columns = [] } = Astro.props;
 ---
 
 <section id="specifications" class="w-full max-w-[1500px] mx-auto px-10 pb-32">

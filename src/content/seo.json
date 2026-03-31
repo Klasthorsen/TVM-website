@@ -1,0 +1,47 @@
+{
+  "global": {
+    "siteTitle": "Area",
+    "titleSeparator": "|",
+    "metaDescription": "Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region. Get real insights without the data overload.",
+    "metaKeywords": "data visualization, analytics, business intelligence, regional data, dashboard, reporting",
+    "canonicalUrl": "https://tvm-website-topaz.vercel.app",
+    "language": "en",
+    "robots": "index, follow"
+  },
+  "openGraph": {
+    "ogTitle": "Area - Browse Everything",
+    "ogDescription": "Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region.",
+    "ogImage": "/images/og-image.jpg",
+    "ogType": "website"
+  },
+  "twitter": {
+    "cardType": "summary_large_image",
+    "twitterHandle": "",
+    "twitterImage": "/images/og-image.jpg"
+  },
+  "localBusiness": {
+    "enabled": false,
+    "name": "Area",
+    "type": "Organization",
+    "description": "Area provides data visualization and analytics solutions for businesses.",
+    "logo": "/images/logo.svg",
+    "phone": "",
+    "email": "",
+    "streetAddress": "",
+    "city": "",
+    "postalCode": "",
+    "country": "",
+    "region": "",
+    "latitude": "",
+    "longitude": "",
+    "openingHours": [],
+    "socialProfiles": []
+  },
+  "advanced": {
+    "googleVerification": "",
+    "bingVerification": "",
+    "googleAnalyticsId": "",
+    "gtmId": "",
+    "customHeadCode": ""
+  }
+}

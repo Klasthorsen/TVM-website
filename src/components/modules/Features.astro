@@ -1,12 +1,12 @@
 ---
 interface Props {
-  headline: string;
-  subheadline: string;
-  image: string;
-  items: Array<{ text: string }>;
+  headline?: string;
+  subheadline?: string;
+  image?: string;
+  items?: Array<{ text: string }>;
 }
 
-const { headline, subheadline, image, items } = Astro.props;
+const { headline = "", subheadline = "", image = "", items = [] } = Astro.props;
 ---
 
 <section class="w-full max-w-[1500px] mx-auto px-10 pb-32">

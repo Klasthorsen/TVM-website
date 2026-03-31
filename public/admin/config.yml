@@ -13,6 +13,86 @@ site_url: https://tvm-website-topaz.vercel.app
 display_url: https://tvm-website-topaz.vercel.app
 
 collections:
+  # SEO & GEO Settings
+  - name: "seo"
+    label: "🔍 SEO & GEO"
+    files:
+      - name: "seo"
+        label: "SEO Settings"
+        file: "src/content/seo.json"
+        fields:
+          - label: "Global SEO"
+            name: "global"
+            widget: "object"
+            fields:
+              - { label: "Site Title", name: "siteTitle", widget: "string", hint: "Visas i webbläsarflik och sökresultat" }
+              - { label: "Title Separator", name: "titleSeparator", widget: "string", default: "|" }
+              - { label: "Meta Description", name: "metaDescription", widget: "text", hint: "Max 160 tecken för bästa resultat i Google" }
+              - { label: "Meta Keywords", name: "metaKeywords", widget: "string", hint: "Kommaseparerade nyckelord" }
+              - { label: "Canonical URL", name: "canonicalUrl", widget: "string", default: "https://tvm-website-topaz.vercel.app" }
+              - { label: "Language", name: "language", widget: "select", options: ["en", "sv", "de", "fr", "es"], default: "en" }
+              - { label: "Robots", name: "robots", widget: "select", options: ["index, follow", "noindex, follow", "index, nofollow", "noindex, nofollow"], default: "index, follow" }
+
+          - label: "Open Graph (Social Sharing)"
+            name: "openGraph"
+            widget: "object"
+            fields:
+              - { label: "OG Title", name: "ogTitle", widget: "string" }
+              - { label: "OG Description", name: "ogDescription", widget: "text" }
+              - { label: "OG Image", name: "ogImage", widget: "image", hint: "Rekommenderad storlek: 1200x630px" }
+              - { label: "OG Type", name: "ogType", widget: "select", options: ["website", "article", "product"], default: "website" }
+
+          - label: "Twitter Card"
+            name: "twitter"
+            widget: "object"
+            fields:
+              - { label: "Card Type", name: "cardType", widget: "select", options: ["summary", "summary_large_image"], default: "summary_large_image" }
+              - { label: "Twitter Handle", name: "twitterHandle", widget: "string", required: false, hint: "@företagsnamn" }
+              - { label: "Twitter Image", name: "twitterImage", widget: "image", required: false }
+
+          - label: "Local Business (GEO)"
+            name: "localBusiness"
+            widget: "object"
+            fields:
+              - { label: "Enable Local SEO", name: "enabled", widget: "boolean", default: false }
+              - { label: "Business Name", name: "name", widget: "string" }
+              - { label: "Business Type", name: "type", widget: "select", options: ["LocalBusiness", "Organization", "Corporation", "ProfessionalService", "SoftwareApplication"], default: "Organization" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - { label: "Street Address", name: "streetAddress", widget: "string", required: false }
+              - { label: "City", name: "city", widget: "string", required: false }
+              - { label: "Postal Code", name: "postalCode", widget: "string", required: false }
+              - { label: "Country", name: "country", widget: "string", required: false }
+              - { label: "Region/State", name: "region", widget: "string", required: false }
+              - { label: "Latitude", name: "latitude", widget: "string", required: false, hint: "Ex: 59.3293" }
+              - { label: "Longitude", name: "longitude", widget: "string", required: false, hint: "Ex: 18.0686" }
+              - label: "Opening Hours"
+                name: "openingHours"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Days", name: "days", widget: "string", hint: "Ex: Monday-Friday" }
+                  - { label: "Hours", name: "hours", widget: "string", hint: "Ex: 09:00-17:00" }
+              - label: "Social Profiles"
+                name: "socialProfiles"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Platform", name: "platform", widget: "select", options: ["Facebook", "Twitter", "LinkedIn", "Instagram", "YouTube"] }
+                  - { label: "URL", name: "url", widget: "string" }
+
+          - label: "Advanced"
+            name: "advanced"
+            widget: "object"
+            fields:
+              - { label: "Google Site Verification", name: "googleVerification", widget: "string", required: false }
+              - { label: "Bing Site Verification", name: "bingVerification", widget: "string", required: false }
+              - { label: "Google Analytics ID", name: "googleAnalyticsId", widget: "string", required: false, hint: "Ex: G-XXXXXXXXXX" }
+              - { label: "Google Tag Manager ID", name: "gtmId", widget: "string", required: false, hint: "Ex: GTM-XXXXXX" }
+              - { label: "Custom Head Code", name: "customHeadCode", widget: "code", required: false, default_language: "html" }
+
   # Site Settings
   - name: "settings"
     label: "⚙️ Site Settings"
@@ -45,6 +125,16 @@ collections:
         label: "Home Page"
         file: "src/content/home.json"
         fields:
+          - label: "Page SEO (Override Global)"
+            name: "seo"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Page Title", name: "title", widget: "string", required: false, hint: "Lämna tomt för att använda global titel" }
+              - { label: "Meta Description", name: "description", widget: "text", required: false }
+              - { label: "OG Image", name: "ogImage", widget: "image", required: false }
+              - { label: "No Index", name: "noIndex", widget: "boolean", default: false }
+
           - label: "Page Modules"
             name: "modules"
             widget: "list"
