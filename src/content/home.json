@@ -3,7 +3,7 @@
     "title": "Browse everything."
   },
   "benefits": {
-    "label": "Benefits",
+    "label": "asdfasdfasdf",
     "headline": "We've cracked the code.",
     "subheadline": "Area provides real insights, without the data overload.",
     "items": [
@@ -33,10 +33,18 @@
     "headline": "See the Big Picture",
     "subheadline": "Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region.",
     "items": [
-      { "text": "Spot Trends in Seconds: No more digging through numbers." },
-      { "text": "Get Everyone on the Same Page: Share easy-to-understand reports with your team." },
-      { "text": "Make Presentations Pop: Interactive maps and dashboards keep your audience engaged." },
-      { "text": "Your Global Snapshot: Get a quick, clear overview of your entire operation." }
+      {
+        "text": "Spot Trends in Seconds: No more digging through numbers."
+      },
+      {
+        "text": "Get Everyone on the Same Page: Share easy-to-understand reports with your team."
+      },
+      {
+        "text": "Make Presentations Pop: Interactive maps and dashboards keep your audience engaged."
+      },
+      {
+        "text": "Your Global Snapshot: Get a quick, clear overview of your entire operation."
+      }
     ]
   },
   "specifications": {
