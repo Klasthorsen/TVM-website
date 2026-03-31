@@ -1,21 +1,46 @@
 {
   "modules": [
     {
+      "type": "logoCloud",
+      "label": "Trusted by:",
+      "logos": [
+        {
+          "image": "/images/logo-1.svg",
+          "alt": "Partner logo 1"
+        },
+        {
+          "image": "/images/logo-2.svg",
+          "alt": "Partner logo 2"
+        },
+        {
+          "image": "/images/logo-3.svg",
+          "alt": "Partner logo 3"
+        },
+        {
+          "image": "/images/logo-4.svg",
+          "alt": "Partner logo 4"
+        },
+        {
+          "image": "/images/logo-5.svg",
+          "alt": "Partner logo 5"
+        },
+        {
+          "image": "/images/logo-6.svg",
+          "alt": "Partner logo 6"
+        }
+      ]
+    },
+    {
       "type": "hero",
       "title": "Browse everything.",
       "heroImage": "/images/hero-screen.jpg"
     },
     {
-      "type": "logoCloud",
-      "label": "Trusted by:",
-      "logos": [
-        { "image": "/images/logo-1.svg", "alt": "Partner logo 1" },
-        { "image": "/images/logo-2.svg", "alt": "Partner logo 2" },
-        { "image": "/images/logo-3.svg", "alt": "Partner logo 3" },
-        { "image": "/images/logo-4.svg", "alt": "Partner logo 4" },
-        { "image": "/images/logo-5.svg", "alt": "Partner logo 5" },
-        { "image": "/images/logo-6.svg", "alt": "Partner logo 6" }
-      ]
+      "type": "benefits",
+      "label": "Benefits",
+      "headline": "rubrik",
+      "image": "/images/3-adjust.jpg",
+      "subheadline": "subrubrik"
     },
     {
       "type": "benefits",
@@ -52,10 +77,18 @@
       "subheadline": "Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region.",
       "image": "/images/features.jpg",
       "items": [
-        { "text": "Spot Trends in Seconds: No more digging through numbers." },
-        { "text": "Get Everyone on the Same Page: Share easy-to-understand reports with your team." },
-        { "text": "Make Presentations Pop: Interactive maps and dashboards keep your audience engaged." },
-        { "text": "Your Global Snapshot: Get a quick, clear overview of your entire operation." }
+        {
+          "text": "Spot Trends in Seconds: No more digging through numbers."
+        },
+        {
+          "text": "Get Everyone on the Same Page: Share easy-to-understand reports with your team."
+        },
+        {
+          "text": "Make Presentations Pop: Interactive maps and dashboards keep your audience engaged."
+        },
+        {
+          "text": "Your Global Snapshot: Get a quick, clear overview of your entire operation."
+        }
       ]
     },
     {
@@ -68,36 +101,90 @@
           "name": "Area",
           "highlighted": true,
           "features": [
-            { "text": "Ultra-fast browsing", "included": true },
-            { "text": "Advanced AI insights", "included": true },
-            { "text": "Seamless integration", "included": true },
-            { "text": "Advanced AI insights", "included": true },
-            { "text": "Ultra-fast browsing", "included": true },
-            { "text": "Full UTF-8 support", "included": true }
+            {
+              "text": "Ultra-fast browsing",
+              "included": true
+            },
+            {
+              "text": "Advanced AI insights",
+              "included": true
+            },
+            {
+              "text": "Seamless integration",
+              "included": true
+            },
+            {
+              "text": "Advanced AI insights",
+              "included": true
+            },
+            {
+              "text": "Ultra-fast browsing",
+              "included": true
+            },
+            {
+              "text": "Full UTF-8 support",
+              "included": true
+            }
           ]
         },
         {
           "name": "WebSurge",
           "highlighted": false,
           "features": [
-            { "text": "Fast browsing", "included": true },
-            { "text": "Basic AI recommendations", "included": true },
-            { "text": "Restricts customization", "included": true },
-            { "text": "Basic AI insights", "included": false },
-            { "text": "Fast browsing", "included": true },
-            { "text": "Potential display errors", "included": false }
+            {
+              "text": "Fast browsing",
+              "included": true
+            },
+            {
+              "text": "Basic AI recommendations",
+              "included": true
+            },
+            {
+              "text": "Restricts customization",
+              "included": true
+            },
+            {
+              "text": "Basic AI insights",
+              "included": false
+            },
+            {
+              "text": "Fast browsing",
+              "included": true
+            },
+            {
+              "text": "Potential display errors",
+              "included": false
+            }
           ]
         },
         {
           "name": "HyperView",
           "highlighted": false,
           "features": [
-            { "text": "Moderate speeds", "included": false },
-            { "text": "No AI assistance", "included": false },
-            { "text": "Steep learning curve", "included": false },
-            { "text": "No AI assistance", "included": false },
-            { "text": "Moderate speeds", "included": false },
-            { "text": "Partial UTF-8 support", "included": false }
+            {
+              "text": "Moderate speeds",
+              "included": false
+            },
+            {
+              "text": "No AI assistance",
+              "included": false
+            },
+            {
+              "text": "Steep learning curve",
+              "included": false
+            },
+            {
+              "text": "No AI assistance",
+              "included": false
+            },
+            {
+              "text": "Moderate speeds",
+              "included": false
+            },
+            {
+              "text": "Partial UTF-8 support",
+              "included": false
+            }
           ]
         }
       ]
