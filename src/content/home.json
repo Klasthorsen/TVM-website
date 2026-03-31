@@ -8,9 +8,14 @@
     "subheadline": "Area provides real insights, without the data overload.",
     "items": [
       {
-        "title": "Amplify Insights",
-        "description": "Unlock data-driven decisions with comprehensive analytics, revealing key opportunities for strategic regional growth.",
+        "title": "testa",
+        "description": "asdfasdfasdfa",
         "icon": "cable"
+      },
+      {
+        "title": "Remove Language Barriers",
+        "description": "Adapt to diverse markets with built-in localization for clear communication and enhanced user experience.",
+        "icon": "account"
       },
       {
         "title": "Control Your Global Presence",
@@ -18,9 +23,9 @@
         "icon": "earth"
       },
       {
-        "title": "Remove Language Barriers",
-        "description": "Adapt to diverse markets with built-in localization for clear communication and enhanced user experience.",
-        "icon": "account"
+        "title": "Amplify Insights",
+        "description": "Unlock data-driven decisions with comprehensive analytics, revealing key opportunities for strategic regional growth.",
+        "icon": "cable"
       },
       {
         "title": "Visualize Growth",
@@ -34,13 +39,13 @@
     "subheadline": "Area turns your data into clear, vibrant visuals that show you exactly what's happening in each region.",
     "items": [
       {
-        "text": "Spot Trends in Seconds: No more digging through numbers."
-      },
-      {
         "text": "Get Everyone on the Same Page: Share easy-to-understand reports with your team."
       },
       {
         "text": "Make Presentations Pop: Interactive maps and dashboards keep your audience engaged."
+      },
+      {
+        "text": "Spot Trends in Seconds: No more digging through numbers."
       },
       {
         "text": "Your Global Snapshot: Get a quick, clear overview of your entire operation."
